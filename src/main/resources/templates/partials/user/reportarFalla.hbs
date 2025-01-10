@@ -1,0 +1,30 @@
+<div class="container">
+        <h1 style="color: black;">Nueva Falla Tecnica</h1>
+        <div class="seccion">
+                <form action="/site/user/reporteFalla" method="post" enctype="multipart/form-data">
+                    <div class="form-section">
+                        <div class="field-group">
+                            <label for="Heladera" class="labelColor">Heladera:</label>
+                            <select id="heladera" name="heladera">
+                                {{> heladeras}}
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="descripcion" class="labelColor">Adjuntar imagen</label>
+                            <input type="file" id="file" name="file" accept=".jpg, .jpeg, .png" style="color: white;">
+                        </div>
+
+
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="descripcion" name="descripcion" style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Descripcion</label>
+                        </div>
+
+                        <div class="form-footer botonPrimario">
+                            <button type="submit" class="button">Reportar</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+</div>

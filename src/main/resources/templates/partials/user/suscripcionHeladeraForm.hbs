@@ -1,0 +1,33 @@
+<div class="container">
+        <h1 style="color: black;">Suscripciones a Heladera</h1>
+
+    <div class="seccion">
+
+            <div class="form-section">
+                <div class="field-group">
+                    <label for="Heladera" class="labelColor">{{heladera.nombreSignificativo}} - {{heladera.direccion}}</label>
+                </div>
+                <form action="/site/user/suscripcionesHeladera/{{heladera.id}}/nueva" method="get">
+                <div class="field-group">
+                    <label for="tipoSuscripcion" class="labelColor" >Tipo Suscripcion:</label>
+                    <select id="tipoSuscripcion" name="tipoSuscripcion" onchange="this.form.submit()">
+                        {{> tipoSuscripciones}}
+                    </select>
+                </div>
+                </form>
+                <form action="/site/user/suscripcionesHeladera" method="post">
+                    <input type="hidden" name="tipoSuscripcion" value="{{tipoSuscripcion}}">
+                    <input type="hidden" name="heladera" value="{{heladera.id}}">
+                    {{#if (eq tipoSuscripcion "CANTIDAD_DE_VIANDAS")}}
+                    <div id="CANTIDAD_DE_VIANDAS">
+                        <label for="cantidad_viandas" class="labelColor">Cantidad de viandas:</label>
+                        <input type="number" id="cantidad_viandas" name="cantidad_viandas" required>
+                    </div>
+                    {{/if}}
+                    <div class="form-footer">
+                        <button type="submit" class="button">Suscribirse</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>

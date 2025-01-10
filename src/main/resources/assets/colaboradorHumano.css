@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+
+.container {
+    width: 70%;
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 15px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+
+.search-bar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #333;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 50%;
+    margin-left: auto;
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.search-bar button {
+    background-color: #333;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 8px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+li span {
+    flex: 1;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.button-container button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #555;
+}
+
+.sub-seccion{
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.seccion{
+    background-color: #333;
+    padding:15px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.form-section {
+    margin: 20px;
+}
+
+.field-group {
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content: space-between; /* Separar los elementos con espacio entre ellos */
+    align-items: center; /* Alinear verticalmente en el centro */
+    margin-bottom: 15px; /* Espaciado entre grupos de campos */
+}
+
+.labelColor {
+    flex: 1; /* Permite que el label ocupe el espacio disponible */
+    margin-right: 10px; /* Espacio entre el label y el input */
+    color: white; /* Color del texto del label */
+    font-weight: bold; /* Negrita para el label */
+}
+
+input {
+    flex: 1; /* Permite que el input ocupe el espacio disponible */
+    padding: 8px; /* Espaciado interno del input */
+    border: 1px solid #ccc; /* Borde del input */
+    border-radius: 4px; /* Bordes redondeados del input */
+    font-size: 16px; /* Tamaño de fuente del input */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para el input */
+}
+
+input:focus {
+    border-color: #007BFF; /* Color del borde cuando el input está enfocado */
+    outline: none; /* Eliminar el contorno predeterminado del input */
+}
+
+.button {
+    background-color: #4a55a1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Color de fondo cuando el mouse está sobre el botón */
+}
+
+.button:focus {
+    outline: none; /* Eliminar el contorno predeterminado del botón al enfocarlo */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Sombra para el enfoque */
+}
+
+.form-footer {
+    text-align: right;
+}
+
+/* Estilos para el select */
+select {
+    width: 100%; /* Ocupa el 100% del contenedor */
+    padding: 10px; /* Espacio interno */
+    border: 2px solid #4a55a1; /* Borde verde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    background-color: #f9f9f9; /* Color de fondo */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+/* Cambiar el color del borde al enfocar el select */
+select:focus {
+    border-color: #4a55a1; /* Borde más oscuro al enfocar */
+    outline: none; /* Eliminar el contorno predeterminado */
+}
+
+/* Cambiar el color del borde al pasar el mouse */
+select:hover {
+    border-color: #4a55a1; /* Color del borde al pasar el mouse */
+}

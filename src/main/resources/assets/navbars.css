@@ -1,0 +1,75 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: #fffffe;
+}
+
+.navbar {
+    background-color: #6246ea;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye el logo, los enlaces centrales y el enlace de Admin */
+    padding: 10px 20px;
+}
+
+.navbar__logo {
+    height: 40px;
+    width: auto;
+    margin-left: 0;
+}
+
+.navbar__links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.navbar__link {
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+.navbar__link--home {
+    background-color: transparent;
+    padding: 0;
+}
+
+.navbar__link--admin {
+    margin-left: auto;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.navbar__link:hover {
+    background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar__links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .navbar__link, .navbar__link--admin {
+        width: 100%;
+        text-align: center;
+    }
+}

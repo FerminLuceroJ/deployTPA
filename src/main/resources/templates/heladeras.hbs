@@ -1,0 +1,6 @@
+<div>
+    <option value="" disabled selected>Selecciona una heladera</option>
+    {{#each heladeras}}
+    <option value="{{this.id}}">{{this.nombreSignificativo}} - {{this.direccion}}</option>
+    {{/each}}
+</div>

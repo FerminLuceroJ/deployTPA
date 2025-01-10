@@ -1,0 +1,30 @@
+<div class="container">
+        <div class="seccion">
+            <div class="sub-seccion">
+                <h1>Perfil de Colaborador</h1>
+
+        {{#if (eq tipo "Humano")}}
+            <li>
+                <span>
+                    <h2>{{colaborador.nombreYapellido}} - Colaborador Humano</h2>
+                    Documento: {{colaborador.tipoDocumento}} - {{colaborador.numeroDocumento}}<br>
+                    Direccion: {{colaborador.direccion}}<br>
+                </span>
+            </li>
+        {{else}}
+            <li>
+                <span>
+                    <h2>{{colaborador.razonSocial}} - Colaborador Juridico</h2>
+                    Tipo Juridico: {{colaborador.tipoJuridico}}<br>
+                    Rubro: {{colaborador.rubro}}<br>
+                    Direccion: {{colaborador.direccion}}<br>
+                </span>
+            </li>
+        {{/if}}
+                <!--
+                <div class="button-container">
+                    <button onclick="window.location.href='/site/colaboradores/{{colaborador.id}}/colaboraciones'">Mostrar Colaboraciones</button>
+                </div> -->
+            </div>
+        </div>
+</div>

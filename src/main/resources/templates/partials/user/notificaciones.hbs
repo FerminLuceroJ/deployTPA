@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>Notificaciones</h1>
+
+    <div class="element-right d-flex align-items-center  align-items-stretch">
+        <div class="d-flex align-items-center flex-fill flex-row flex-grow-1 flex">
+            <a href="/site/user/notificaciones" class="btn btn-secondary ms-2">Resetear Filtro</a>
+            <form action="/site/user/notificaciones" method="GET" class="d-inline-block ms-2 mt-1">
+                <div class="input-group">
+                    <input type="date" name="startDate" class="form-control" placeholder="Fecha Inicio" value="{{queryParams.startDate}}" style="width: 135px;">
+                    <input type="date" name="endDate" class="form-control" placeholder="Fecha Fin" value="{{queryParams.endDate}}" style="width: 135px;">
+                    <button type="submit" class="btn btn-dark flex-grow-1">Filtrar</button>
+                </div>
+            </form>
+        </div>
+        <div class="d-flex flex-column align-items-center justify-content-center flex-fill">
+            {{#if warning}}
+                <span class="text-danger smaller-text " style="background-color: #f8d7da; padding: 5px; border-radius: 3px; font-size: 0.73em;">
+                    {{warning}}
+                </span>
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="seccion">
+        <div class="sub-seccion">
+            {{#if notificaciones.length}}
+                <ul class="list-group">
+                    {{#each notificaciones}}
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-md-8 smaller-text">
+                                    <h5>{{asunto}}</h5>
+                                    <span class="fw-bold">Tipo de Notificacion:</span> <span class="fw-normal">{{tipoNotificacion}}</span><br>
+                                    <span class="fw-bold">Fecha Notificacion:</span> <span class="fw-normal">{{fechaNotificacion}}</span><br>
+                                    {{#if sugerencia}}
+                                        <div class="d-inline-block p-1 mt-1" style="background-color: rgba(255, 255, 0, 0.2); color: #b58900; border: 1px solid #b58900; border-radius: 0;">
+                                            <i class="fas fa-exclamation-triangle fw-bold"></i> Tiene una Sugerencia
+                                        </div>
+                                    {{/if}}
+                                </div>
+                                <div class="col-md-4 d-flex align-items-center justify-content-center">
+                                    <button class="btn btn-dark" onclick="window.location.href='/site/user/notificaciones/{{id}}'">Mostrar Detalles</button>
+                                </div>
+                            </div>
+
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p>No hay notificaciones disponibles.</p>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+{{> paginacion}}

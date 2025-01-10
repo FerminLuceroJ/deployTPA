@@ -1,0 +1,240 @@
+/* Reglas globales */
+h1 {
+    text-align: center;
+    color: black;
+    font-size: 2em;
+}
+
+/* Estilo principal del contenedor */
+.container {
+    width: 50%;
+    max-width: 800px;
+    padding: 20px; /* Añadido del archivo previo */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: auto;
+}
+
+/* Estilo de nueva sección/report */
+.new-report {
+    background-color: #333;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 50%;
+    margin: auto;
+    height: 40px;
+    font-size: 18px;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+    display: flex;
+    justify-content: flex-end; /* Prioridad del CSS previo */
+    align-items: center;
+    background-color: #333;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 0px;
+    width: 50%;
+    margin-left: auto;
+    font-size: 14px;
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.search-bar button {
+    background-color: #333;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 2px;
+    padding: 0px 0px 0px 0px;
+    font-size: 20px;
+}
+
+/* Listas */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 8px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+li span {
+    flex: 1;
+    font-weight: bold;
+}
+
+/* Botones */
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.button-container button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #555;
+}
+
+/* Secciones */
+.sub-seccion {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.seccion {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+/* Elementos individuales */
+.dropdown-menu {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.filtrar-item {
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+li.filtrar-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+li.filtrar-item a:hover {
+    text-decoration: none;
+    color: #333;
+    background-color: transparent;
+}
+
+.filtrar-item:hover {
+    background-color: #e9ecef;
+}
+
+.colaboracion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 8px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.colaboracion-item:hover {
+    background-color: #e9ecef;
+}
+
+.botonCSV {
+    background-color: #6246ea;
+    align-self: flex-start;
+}
+
+.botonPrimario {
+    margin-top: 15px;
+    color: #fffffe;
+    height: 40px;
+    border-radius: 7px;
+    background-color: #6246ea;
+    cursor: pointer;
+}
+
+.botonPrimario:hover {
+    background-color: #5039c7;
+}
+
+.botonSecundario {
+    margin-top: 15px;
+    color: black;
+    border-radius: 7px;
+    background-color: #d1d1e9;
+    height: 40px;
+    cursor: pointer;
+}
+
+.inputsLogin {
+    color: black;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.element-rigth {
+    text-align: right;
+}
+
+.smaller-text {
+    font-size: 0.875em; /* Adjust the size as needed */
+}
+
+/* For pagination */
+.btn-custom {
+    background-color: black;
+    color: white;
+    border: none;
+    transition: color 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth color and shadow effect */
+}
+
+.btn-custom:hover {
+    color: #6246ea; /* Change text color to violet on hover */
+    background-color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect on hover */
+    transform: scale(1.05); /* Slightly increase the size of the box */
+    font-weight: bold;
+}
+
+.page-item.active .btn-custom {
+    background-color: #6246ea;
+    color: #ffffff;
+}
+
+.page-item.disabled .btn-custom {
+    background-color: #ccc; /* Lighter background color */
+    color: #e0e0e0; /* Lighter text color */
+    cursor: not-allowed;
+}

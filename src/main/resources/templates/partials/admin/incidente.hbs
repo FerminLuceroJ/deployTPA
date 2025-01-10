@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="seccion">
+        <div class="sub-seccion">
+            <h1>Detalles del Incidente</h1>
+            <div class="detalle-incidente d-flex justify-content-between">
+                <div>
+                    <span class="tipo-incidente fw-bold">Incidente {{incidente.tipoIncidente}}</span><br>
+                    <span class="smaller-text">
+                            <span><strong>Fecha y Hora:</strong> {{incidente.fechayHoraFormateada}}</span><br>
+                        {{#if (isType incidente "AlertaConexion")}}
+                        {{/if}}
+                        {{#if (isType incidente "AlertaTemperatura")}}
+                            <span><strong>Temperatura:</strong> {{incidente.temperatura}}</span><br>
+                        {{/if}}
+                        {{#if (isType incidente "FallaTecnica")}}
+
+                            <span><strong>Tipo de falla:</strong> {{incidente.tipoFallaConexion}}</span><br>
+                            <span><strong>Descripcion:</strong> {{incidente.descripcion}}</span><br>
+                            <strong>Imagen:</strong><br>
+                            {{#if incidente.imagePath}}
+                                <img src="{{incidente.imagePath}}" alt="Falla Tecnica imagen" style="max-width: 100%; height: auto;"><br>
+                            {{/if}}
+                        {{/if}}
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

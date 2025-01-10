@@ -1,0 +1,22 @@
+<div class="field-group">
+    <label for="heladera_origen" class="labelColor">Heladera Origen:</label>
+    <select id="heladera_origen" name="heladera_origen">
+        {{> heladeras}}
+    </select>
+</div>
+<div class="field-group">
+    <label for="heladera_destino" class="labelColor">Heladera Destino:</label>
+    <select id="heladera_destino" name="heladera_destino">
+        {{> heladeras}}
+    </select>
+</div>
+
+<div class="field-group">
+    <label for="cantidad_viandas" class="labelColor">Cantidad Viandas:</label>
+    <input type="number" id="cantidad_viandas" name="cantidad_viandas" required>
+</div>
+
+<div class="form-floating">
+    <textarea class="form-control" placeholder="Leave a comment here" id="motivo" name="motivo" style="height: 100px"></textarea>
+    <label for="floatingTextarea2">Motivo</label>
+</div>

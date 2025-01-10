@@ -1,0 +1,17 @@
+<div class="container">
+        <div class="seccion">
+            <div class="sub-seccion">
+                <h1>Perfil de Persona Vulnerable</h1>
+                <span class="smaller-text">
+                    <h2>{{personaVulnerable.nombre}}</h2>
+                    <strong>Documento:</strong> <span style="font-weight:normal;">{{personaVulnerable.tipoDocumento}} {{personaVulnerable.numeroDocumento}}</span><br>
+                    <strong>Dirección:</strong> <span style="font-weight:normal;"> {{personaVulnerable.direccion}}</span><br>
+                    <strong>Fecha de Nacimiento:</strong> <span style="font-weight:normal;"> {{personaVulnerable.fechaNacimientoFormateada}}</span><br>
+                    <strong>Situación de Calle:</strong> <span style="font-weight:normal;"> {{#if personaVulnerable.situacionDeCalle}} Si {{else}} No {{/if}}</span><br>
+                    <strong>Cantidad Menores a Cargo:</strong> <span style="font-weight:normal;"> {{personaVulnerable.cantidadMenoresACargo}}</span><br>
+
+
+                </span>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,38 @@
+
+<div class="container">
+    <h1 style="color: black;">Heladeras</h1>
+    <form action="/site/heladeras" method="GET">
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar Heladera" name="nombre" id="nombre">
+            <button type="submit">🔍</button>
+        </div>
+    </form>
+
+   <div class="seccion">
+       <div class="sub-seccion">
+            {{#if heladeras.length}}
+                <ul class="list-group">
+                    {{#each heladeras}}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="fw-bold">{{this.heladera.nombreSignificativo}}</span><br>
+                                <span class="smaller-text">
+                                    <strong>Serial Number:</strong> <span style="font-weight:normal;"> {{this.heladera.serialNumber}}</span> ||
+                                    <strong>Ubicación:</strong> <span style="font-weight:normal;"> {{this.heladera.direccion}}</span> ||
+                                    <strong>Peso:</strong> <span style="font-weight:normal;"> {{this.heladera.calcularPeso}}</span><br>
+                                    <strong>Fecha de Funcionamiento:</strong> <span style="font-weight:normal;"> {{this.heladera.fechaFuncionamientoFormateada}}</span>
+                                </span>
+                            </div>
+                            <div class="button-container">
+                                <button type="button" onclick="location.href='/site/admin/heladeras/{{this.heladera.id}}/incidentes'" class="btn btn-dark">Incidentes</button>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p>No hay heladeras disponibles.</p>
+            {{/if}}
+        </div>
+    </div>
+    {{> paginacion}}
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+
+    <h1 style="color: black;">Visualización de Reportes</h1>
+
+    <div class="seccion">
+        <div class="sub-seccion">
+            {{#if reportes.length}}
+                <ul class="list-group">
+                    {{#each reportes}}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{#if colaborador.esJuridico}}
+                                <strong>Reporte:</strong> <span style="font-weight: normal;">{{colaborador.razonSocial}}</span>
+                            {{else}}
+                                    <strong>Reporte:</strong> <span style="font-weight: normal;">{{colaborador.nombreYapellido}}</span>
+                            {{/if}}
+                            <strong>Puntaje:</strong> <span style="font-weight: normal;">{{puntaje}}</span>
+                            <strong>Fecha:</strong> <span style="font-weight: normal;">{{fechaReporte}}</span>
+
+                            <!--<div class="button-container">
+                                <button>Descargar PDF</button>
+                            </div> -->
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p class="text-center">{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+
+    </div>
+
+    {{> paginacion}}

@@ -1,0 +1,50 @@
+<div class="container">
+    <h1>Suscripciones a Heladeras</h1>
+    <form action="/site/user/colaboraciones" method="POST">
+        <input type="hidden" name="tipoColaboracion" value="hacerse_cargo_heladera">
+        <div class="seccion">
+            <div class="sub-seccion">
+                <p>Las heladeras actuales son:</p>
+                <ul>
+                    {{#each heladeras}}
+                        <input type="hidden" name="idHeladera" value="{{id}}">
+                        <li>
+                            <span>
+                                <h2>{{nombreSignificativo}}</h2>
+                                Serial Number: {{serialNumber}}<br>
+                                Dirección: {{direccion}}<br>
+                                Peso: {{this.calcularPeso}}
+                            </span>
+                            <div class="button-container">
+                                <button type="submit">Hacerse cargo</button>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </form>
+
+    <!-- Modal para mensaje de éxito -->
+    {{#if exitoso}}
+        <div class="modal fade show" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Éxito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        {{exitoso}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+
+</div>
+
+{{> paginacion}}

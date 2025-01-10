@@ -1,0 +1,20 @@
+{{#if hasItems}}
+<nav id="pagination-nav" aria-label="Page navigation example">
+    <ul class="pagination pagination-sm justify-content-center">
+        <!-- Previous Button -->
+        <li class="page-item {{#if (eq paginaActual 1)}}disabled{{/if}}">
+            <a class="page-link btn-custom" href="?page={{sub paginaActual 1}}">&lt;</a>
+        </li>
+        <!-- Page Numbers -->
+        {{#each (range 1 totalPaginas)}}
+            <li class="page-item {{#if (eq ../paginaActual this)}}active{{/if}}">
+                <a class="page-link btn-custom" href="?page={{this}}">{{this}}</a>
+            </li>
+        {{/each}}
+        <!-- Next Button -->
+        <li class="page-item {{#if (eq paginaActual totalPaginas)}}disabled{{/if}}">
+            <a class="page-link btn-custom" href="?page={{add paginaActual 1}}">&gt;</a>
+        </li>
+    </ul>
+</nav>
+{{/if}}

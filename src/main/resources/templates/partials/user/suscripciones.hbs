@@ -1,0 +1,42 @@
+<div class="container">
+    <h1 style="color: black;">Suscripciones a Heladeras</h1>
+    <form action="/site/user/suscripcionesHeladeras" method="GET">
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar Heladera" name="nombre" id="nombre">
+            <button type="submit">🔍</button>
+        </div>
+    </form>
+
+    <div class="seccion">
+        <div class="sub-seccion">
+            {{#if suscripciones.length}}
+                <ul class="list-group">
+                    {{#each suscripciones}}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="fw-bold">{{this.heladera.nombreSignificativo}}</span><br>
+                                <span class="smaller-text">
+                            {{#if this.esCantidadViandas}}
+                                <strong>Tipo de Suscripcion:</strong> <span style="font-weight:normal;"> Cantidad de Viandas</span><br>
+                                <strong>Cantidad de Viandas: </strong> <span style="font-weight:normal;"> {{this.cantidadViandasNotificacion}}</span><br>
+                            {{else}}
+                                <strong>Tipo de Suscripcion:</strong> <span style="font-weight:normal;"> Reporte Incidentes</span><br>
+                                </span>
+                            {{/if}}
+                            </div>
+                            <div class="button-container">
+                                <form action="/site/user/suscripcionesHeladera/{{this.heladera.id}}/{{this.id}}" method="POST" style="display: inline;">
+                                    <button type="submit" class="btn btn-dark">Desuscribirse</button>
+                                </form>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p>No hay suscripciones disponibles.</p>
+            {{/if}}
+        </div>
+    </div>
+
+    {{> paginacion}}
+</div>

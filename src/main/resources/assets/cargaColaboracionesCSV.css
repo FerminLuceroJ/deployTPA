@@ -1,0 +1,27 @@
+.formCSV {
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 100px 200px;
+    padding: 50px;
+    border-radius: 12px;
+    gap: 30px;
+    border: 7px solid black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 4px black;
+}
+
+.btn-import {
+    background-color: blueviolet;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0;
+}

@@ -1,0 +1,55 @@
+<div class="container">
+        <h1>Colaboraciones</h1>
+            <div class="dropdown element-rigth">
+        {{#if esAdmin}}
+                <a href="/site/admin/cargaColaboracionesCSV" class="btn btn-secondary ms-2 botonCSV" style="float: left;">Cargar Colaboraciones Masivamente</a>
+        {{else}}
+                <a href="/site/user/colaboracion/nueva" class="btn btn-secondary ms-2 botonCSV" style="float: left;">Nueva Colaboracion</a>
+        {{/if}}
+                <a href="/site/colaboraciones" class="btn btn-secondary ms-2">Resetear Filtro</a>
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Filtrar por Tipo
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="filtrar-item"><a class="dropdown-item" href="/site/colaboraciones?tipo=DonarDinero">Donar Dinero</a></li>
+                    <li class="filtrar-item"><a class="dropdown-item" href="/site/colaboraciones?tipo=DonarVianda">Donar Vianda</a></li>
+                    <li class="filtrar-item"><a class="dropdown-item" href="/site/colaboraciones?tipo=DistribuirVianda">Distribuir Vianda</a></li>
+                    {{#if esJuridico}}
+                        <li class="filtrar-item"><a class="dropdown-item" href="/site/colaboraciones?tipo=HacerseCargoHeladera">Hacerse Cargo Heladera</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+        <div class="seccion">
+            <div class="sub-seccion">
+                {{#if colaboraciones.length}}
+                    <ul class="list-group">
+                        {{#each colaboraciones}}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold">{{nombre}}</span><br>
+                                    <span class="smaller-text">
+                                    {{#if esAdmin}}
+                                        {{#if colaboracion.colaborador.esJuridico}}
+                                            <strong>Colaborador:</strong> <span style="font-weight: normal;"> {{colaboracion.colaborador.razonSocial}}</span><br>
+                                        {{else}}
+                                            <strong>Colaborador:</strong> <span style="font-weight: normal;"> {{colaboracion.colaborador.nombreYapellido}}</span><br>
+                                        {{/if}}
+                                    {{/if}}
+                                        <strong>Fecha Colaboracion:</strong> <span style="font-weight: normal;"> {{colaboracion.fechaColaboracionFormateada}}</span>
+                                    </span>
+                                </div>
+                                <div class="button-container">
+                                    <button onclick="window.location.href='/site/colaboraciones/{{colaboracion.id}}'" class="btn btn-dark">Mostrar Detalles</button>
+                                </div>
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{else}}
+                    <p>No hay colaboraciones disponibles.</p>
+                {{/if}}
+            </div>
+        </div>
+
+    </div>
+
+{{> paginacion}}

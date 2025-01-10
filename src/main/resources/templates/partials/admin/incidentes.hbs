@@ -1,0 +1,31 @@
+<div class="container">
+        <h1><strong> Incidentes de {{this.heladera.nombreSignificativo}}</strong></h1>
+        <div class="seccion">
+            <div class="sub-seccion">
+                {{#if incidentes.length}}
+                    <ul class="list-group">
+                        {{#each incidentes}}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span>Incidente {{tipoIncidente}}</span><br>
+                                    <div class="smaller-text">
+                                        <span><strong>Fecha:</strong><a style="font-weight:normal;"> {{fechayHoraFormateada}}</a></span><br>
+                                    </div>
+                                    {{#if (eq tipoIncidente "Temperatura")}}
+                                        <span><strong>Temperatura:</strong></span> {{temperatura}}
+                                    {{/if}}
+                                    {{#if (eq tipoIncidente "Conexion")}}
+                                        <span><strong>Tipo:</strong></span> {{tipoConexion}}
+                                    {{/if}}
+                                </div>
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{else}}
+                    <p>No hay incidentes disponibles.</p>
+                {{/if}}
+            </div>
+        </div>
+
+        {{> paginacion}}
+</div>

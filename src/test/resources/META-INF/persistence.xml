@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="simple-persistence-unit" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- ACA VAN LAS CLASES A PERSISTIR -->
+        <class>dominio.entidades.heladera.Heladera</class>
+
+        <class>dominio.entidades.persona.colaborador.Colaborador</class>
+        <class>dominio.entidades.persona.colaborador.ColaboradorHumano</class>
+        <class>dominio.entidades.persona.colaborador.ColaboradorJuridico</class>
+        <class>dominio.entidades.personasVulnerables.PersonaVulnerable</class>
+        <class>dominio.entidades.tecnicoHeladeras.TecnicoHeladera</class>
+
+        <class>dominio.entidades.colaboracion.Colaboracion</class>
+        <class>dominio.entidades.colaboracion.DistribuirVianda</class>
+        <class>dominio.entidades.colaboracion.DonarDinero</class>
+        <class>dominio.entidades.colaboracion.DonarVianda</class>
+        <class>dominio.entidades.colaboracion.HacerseCargoHeladera</class>
+        <class>dominio.entidades.colaboracion.RegistroDePersonaVulnerable</class>
+
+        <class>dominio.entidades.vianda.Vianda</class>
+
+        <class>dominio.entidades.heladera.incidentes.Incidente</class>
+
+        <class>dominio.entidades.heladera.aperturas.SolicitudApertura</class>
+        <class>dominio.entidades.tarjeta.solicitudes.SolicitudTarjeta</class>
+
+        <class>dominio.localizacion.Localizacion</class>
+
+        <class>dominio.entidades.formulario.Formulario</class>
+        <class>dominio.entidades.formulario.Pregunta</class>
+        <class>dominio.entidades.formulario.Respuesta</class>
+
+        <class>dominio.notificador.mediosDeContacto.MedioContacto</class>
+        <class>dominio.notificador.mediosDeContacto.ContactoMail</class>
+        <class>dominio.notificador.mediosDeContacto.ContactoWPP</class>
+        <class>dominio.notificador.mediosDeContacto.ContactoTelegram</class>
+
+        <class>dominio.entidades.tarjeta.TarjetaPersonaVulnerable</class>
+        <class>dominio.entidades.tarjeta.TarjetaColaborador</class>
+        <class>dominio.entidades.tarjeta.UsoDeTarjeta</class>
+
+        <class>dominio.entidades.tecnicoHeladeras.RegistroVisita</class>
+        <class>dominio.entidades.tecnicoHeladeras.SolicitudVisita</class>
+
+        <class>dominio.notificador.Notificacion</class>
+        <class>dominio.reportes.Reporte</class>
+        <class>dominio.entidades.heladera.sensorTemperatura.Lectura</class>
+        <class>dominio.entidades.heladera.sugerenciaIncidente.SugerenciaMoverViandas</class>
+        <class>dominio.entidades.heladera.incidentes.Incidente</class>
+        <class>dominio.entidades.heladera.incidentes.AlertaConexion</class>
+        <class>dominio.entidades.heladera.incidentes.FallaTecnica</class>
+        <class>dominio.entidades.heladera.incidentes.AlertaTemperatura</class>
+        <class>dominio.entidades.heladera.incidentes.suscripciones.Suscripcion</class>
+        <class>dominio.entidades.heladera.incidentes.suscripciones.Suscripcion</class>
+
+
+
+
+        <!-- ACA VAN LAS CLASES A PERSISTIR -->
+
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class"/>
+
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/dds_grupo9" />
+            <property name="hibernate.connection.username" value="root" />
+            <property name="hibernate.connection.password" value="1234" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+
+            <!--property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>
+            <property name="hibernate.connection.url" value="jdbc:hsqldb:mem:app-db"/>
+            <property name="hibernate.connection.username" value="sa"/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/-->
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="use_sql_comments" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+
+    </persistence-unit>
+
+</persistence>

@@ -1,0 +1,41 @@
+<div class="container">
+    <h1 style="color: black;">Realizar Nueva Colaboracion</h1>
+    <div class="seccion">
+        <form id="colaboracionForm" method="get" action="/site/user/colaboracion/nueva">
+            <label for="opciones" class="labelColor">Selecciona un tipo de Colaboracion:</label>
+            <select id="opciones" name="tipoColaboracion" onchange="this.form.submit()">
+                <option value="" disabled selected{{#if (eq tipoColaboracion "")}}selected{{/if}}>Selecciona un tipo de colaboracion</option>
+                {{#each tipoColaboraciones}}
+                    <option value="{{this.valor}}" {{#if (eq ../tipoColaboracion this.valor)}}selected{{/if}}>{{this.nombre}}</option>
+                {{/each}}
+            </select>
+        </form>
+{{#if tipoColaboracion}}
+        <form method="post" action="/site/user/colaboraciones">
+            <input type="hidden" name="tipoColaboracion" value="{{tipoColaboracion}}">
+            {{#if (eq tipoColaboracion "donar_dinero")}}
+                {{> donarDineroForm}}
+            {{/if}}
+
+            {{#if (eq tipoColaboracion "donar_vianda")}}
+                {{> donarViandaForm}}
+            {{/if}}
+
+            {{#if (eq tipoColaboracion "hacerse_cargo_heladera")}}
+                {{> hacerseCargoHeladeraForm}}
+            {{/if}}
+
+            {{#if (eq tipoColaboracion "distribuir_vianda")}}
+                {{> distribuirViandaForm}}
+            {{/if}}
+
+            {{#if (eq tipoColaboracion "registro_persona_vulnerable")}}
+                {{> registroPersonaVulnerableForm}}
+            {{/if}}
+            <div class="form-footer">
+                <button type="submit" class="button">Enviar Colaboracion</button>
+            </div>
+        </form>
+{{/if}}
+    </div>
+</div>

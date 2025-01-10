@@ -1,0 +1,31 @@
+<div class="container">
+        <h1 style="color: black;">Personas Vulnerables</h1>
+        <form action="/site/admin/personasVulnerables" method="GET">
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar persona vulnerable" name="nombre" id="nombre">
+                <button>🔍</button>
+            </div>
+        </form>
+        
+        <div class="seccion">
+            <div class="sub-seccion">
+                {{#if personasVulnerables.length}}
+                    <ul class="list-group">
+                        {{#personasVulnerables}}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>{{nombre}}<br>
+                                {{fechaIngreso}}</span>
+                            <div class="button-container">
+                                <button onclick="window.location.href='/site/admin/personasVulnerables/{{id}}'">Mostrar Detalles</button>
+                            </div>
+                        </li>
+                        {{/personasVulnerables}}
+                    </ul>
+                {{else}}
+                    <p>No hay personas vulnerables disponibles.</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+ {{> paginacion}}

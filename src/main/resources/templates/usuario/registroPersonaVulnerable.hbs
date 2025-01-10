@@ -1,0 +1,20 @@
+<div>
+<form action="/nueva-colaboracion" method="post">
+    <div class="form-section">
+         <div class="field-group">
+                    <label for="monto" class="labelColor">Frecuencia:</label>
+                    <select id="opciones" name="opciones">
+                        {{> personasVulnerables}}
+                    </select>
+         </div>
+
+        <div class="field-group">
+            <label for="descripcion" class="labelColor">Descripcion:</label>
+            <input type="text" id="descripcion" name="descripcion" required>
+        </div>
+        <div class="form-footer">
+            <button type="submit" class="button">Enviar</button>
+        </div>
+    </div>
+</form>
+ </div>

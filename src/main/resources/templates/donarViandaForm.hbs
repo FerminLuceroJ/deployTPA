@@ -1,0 +1,30 @@
+<div class="field-group">
+    <label for="Heladera" class="labelColor">Heladera:</label>
+    <select id="heladera" name="heladera">
+        {{> heladeras}}
+    </select>
+</div>
+<div class="field-group">
+    <label for="tipo_comida" class="labelColor">Tipo de Comida:</label>
+    <select id="tipo_comida" name="tipo_comida" required>
+        <option value="" disabled selected>Selecciona un tipo de comida</option>
+        <option value="PERECEDERA">Perecedera</option>
+        <option value="NO_PERECEDERA">No perecedera</option>
+    </select>
+</div>
+<div class="field-group">
+    <label for="peso" class="labelColor">Peso (gramos):</label>
+    <input type="number" id="peso" name="peso" required>
+</div>
+<div class="field-group">
+    <label for="calorias" class="labelColor">Calorias:</label>
+    <input type="number" id="calorias" name="calorias" required>
+</div>
+<div class="field-group">
+    <label for="fecha_caducidad" class="labelColor">Fecha de caducidad:</label>
+    <input type="date" id="fecha_caducidad" name="fecha_caducidad" required>
+</div>
+<div class="field-group">
+    <label for="fecha_donacion" class="labelColor">Fecha de donacion:</label>
+    <input type="date" id="fecha_donacion" name="fecha_donacion" required>
+</div>

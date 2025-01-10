@@ -1,0 +1,35 @@
+<nav class="navbar">
+    <a class="navbar__link navbar__link--home" href="/site/colaboraciones">
+        <img class="navbar__logo" src="/assets/imagenes/imagenLogin.png" alt="logo">
+    </a>
+    <div class="navbar__links">
+        {{#if usuario.esHumano}}
+            <a class="navbar__link" href="/site/user/suscripcionesHeladera">Suscribirse a Heladera</a>
+            <a class="navbar__link" href="/site/user/reporteFalla">Reportar Falla Tecnica</a>
+        {{/if}}
+            <a class="navbar__link" href="/site/colaboraciones">Colaboraciones</a>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle navbar__link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+        {{#if usuario.esHumano}}
+            {{usuario.colaborador.nombreYapellido}}
+        {{else}}
+            {{usuario.colaborador.razonSocial}}
+        {{/if}}
+
+
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+            {{#if usuario.esHumano}}
+            <li><a class="dropdown-item" href="/site/user/notificaciones">Notificaciones</a></li>
+            {{/if}}
+            <li>
+                <form action="/logout" method="POST" style="display:inline;">
+                    <button type="submit" class="dropdown-item">Log Out</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+

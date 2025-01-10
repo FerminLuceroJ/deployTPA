@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colaboradores</title>
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/general.css">
+    <link rel="stylesheet" href="/assets/navbars.css">
+</head>
+<body>
+    {{> navbarUsuario}}
+    <div class="container">
+        <h1 style="color: black;">Ubicaciones</h1>
+        <div class="seccion">
+            <div class="sub-seccion">
+                <p>Ubicaciones:</p>
+                    <ul>
+                        {{#heladeras}}
+                            <li>
+                                <span>{{direccion}}</span>
+                                <div class="button-container">
+                                    <button onclick="window.location.href='/site/nueva-heladera/{{id}}'">Hacerse cargo heladera</button>
+                                </div>
+                            </li>
+                        {{/heladeras}}
+                    </ul>
+
+            </div>
+        </div>
+
+
+    </div>
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

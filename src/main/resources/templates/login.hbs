@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/assets/login.css">
+</head>
+<body>
+    <div class="login">
+        <header>
+            <h2>¿Quienes somos?</h2>
+        </header>
+        <p>
+            Somos SMAA (Sistema para la Mejora del Acceso Alimentario
+             en Contextos de Vulnerabilidad Socioeconómica), una ONG
+            que decidio colocar heladeras a lo largo y ancho del pais para
+            mejorar el acceso a los alimentos de las personas con
+            vulnerabilidad alimentaria
+        </p>
+    </div>
+    <div class="login">
+        <header>
+            <h2>SMAA</h2>
+        </header>
+        <form class="formLogin" action="/login" method="POST">
+            <input class="inputsLogin" type="email" name="email" id="email" placeholder="Correo Electronico" required>
+            <input class="inputsLogin" type="password" name="password" id="" placeholder="Contraseña" required>
+            <button class="botonInicioSesion" type="submit" >Iniciar Sesion</button>
+            <button class="botonRegistrarse" type="submit" >Registrarse</button>
+        </form>
+
+        <!-- Espacio para mostrar mensajes de error -->
+        <div id="error-message" style="color: red; display: none;"></div>
+
+        <script>
+            // Verifica si hay un parámetro de error en la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('error')) {
+                document.getElementById('error-message').innerText = 'Correo electrónico o contraseña incorrectos. Intenta de nuevo.';
+                document.getElementById('error-message').style.display = 'block'; // Muestra el mensaje
+            }
+        </script>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="seccion">
+        <div class="sub-seccion">
+            <h2>Detalles de Notificación</h2>
+            <ul>
+                <li>
+                    <span>
+                        <h3>Asunto: {{notificacion.asunto}}</h3>
+                        Tipo de Notificación: {{notificacion.tipoNotificacion}}<br>
+                        Fecha: {{notificacion.fechaNotificacion}}<br>
+                        Mensaje: {{notificacion.mensaje}}<br>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        {{#if notificacion.sugerencia}}
+            <div class="seccion">
+                <div class="sub-seccion">
+                    <h2>Sugerencia de Distribución de Viandas</h2>
+                    <ul>
+                        <li>
+                            <span>
+                                <h3>Heladera Dañada</h3>
+                                Nombre Significativo: {{notificacion.sugerencia.heladeraDaniada.nombreSignificativo}}
+                                <br>
+                                Dirección: {{notificacion.sugerencia.heladeraDaniada.direccion}}<br>
+                                Estado: {{#if notificacion.sugerencia.heladeraDaniada.estaActiva}}
+                                Activa {{else}} Fuera de Funcionamiento{{/if}}<br>
+                            </span>
+                        </li>
+                        <li class="mt-4">
+                            <span>
+                                <h3>Opciones Heladeras Destino</h3>
+                                    <form method="post" action="/site/user/notificaciones/{{notificacion.id}}/aceptar" style="display: inline;">
+                                        <label for="heladera" class="form-label">Seleccionar Heladera:</label>
+                                        <select id="heladera" name="heladeraDestinoId" class="form-select" required>
+                                            <option value="" disabled selected>Selecciona una heladera...</option>
+                                            {{#each heladerasParaTransferir}}
+                                                <option value="{{this.id}}">{{this.nombreSignificativo}} - {{this.direccion}}</option>
+                                            {{/each}}
+                                        </select>
+                                        <button class="btn mt-3 me-2 botonPrimario" type="submit">Aceptar</button>
+                                    </form>
+                                    <form method="post" action="/site/user/notificaciones/{{notificacion.id}}/rechazar" style="display: inline;">
+                                        <button class="btn btn-danger mt-3" type="submit">Rechazar</button>
+                                    </form>
+                            </span>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>

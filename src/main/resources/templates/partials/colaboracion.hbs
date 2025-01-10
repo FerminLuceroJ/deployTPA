@@ -1,0 +1,98 @@
+<div class="container">
+        <div class="seccion">
+            <div class="sub-seccion">
+                <h1>Detalles de Colaboracion</h1>
+                {{#if (isType colaboracion "DonarDinero")}}
+                    <div class="detalle-colaboracion d-flex justify-content-between">
+                        <div>
+                            <span class="tipo-colaboracion fw-bold">Donar Dinero</span><br>
+                            <span class="smaller-text">
+                                {{#if colaboracion.colaborador.esJuridico}}
+                                    <strong>Colaborador:</strong> <span style="font-weight: normal;"> {{colaboracion.colaborador.razonSocial}}</span><br>
+                                {{else}}
+                                    <strong>Colaborador:</strong> <span style="font-weight: normal;"> {{colaboracion.colaborador.nombreYapellido}}</span><br>
+                                {{/if}}
+                                <span><strong>Fecha de Colaboracion:</strong> {{colaboracion.fechaColaboracionFormateada}}</span><br>
+                                <span><strong>Monto donado:</strong> ${{colaboracion.monto}}</span><br>
+                                <span><strong>Frecuencia:</strong> {{colaboracion.frecuencia}}</span><br>
+                            </span>
+                        </div>
+                    </div>
+                {{/if}}
+                {{#if (isType colaboracion "DonarVianda")}}
+                    <div class="detalle-colaboracion d-flex justify-content-between">
+                        <div>
+                            <span class="tipo-colaboracion fw-bold">Donar Vianda</span><br>
+                            <span class="smaller-text">
+                            {{#if colaboracion.colaborador.esJuridico}}
+                                <strong>Colaborador:</strong> <span style="font-weight: normal;"> {{colaboracion.colaborador.razonSocial}}</span><br>
+                            {{else}}
+                                <strong>Colaborador:</strong> <span style="font-weight: normal;"> {{colaboracion.colaborador.nombreYapellido}}</span><br>
+                            {{/if}}
+                                <span><strong>Fecha de Colaboración:</strong> {{colaboracion.fechaColaboracionFormateada}}</span><br>
+                                <span><strong>Heladera:</strong> {{colaboracion.heladera.nombreSignificativo}}</span><br>
+                                <span><strong>Estado Vianda:</strong> {{#if colaboracion.vianda.fueEntregada}} Entregada {{else}} No Entregada {{/if}} </span><br>
+                            </span>
+                        </div>
+                    </div>
+                {{/if}}
+                {{#if (isType colaboracion "DistribuirVianda")}}
+                    <div class="detalle-colaboracion d-flex justify-content-between">
+                        <div>
+                            <span class="tipo-colaboracion fw-bold">Distribuir Vianda</span><br>
+                            <span class="smaller-text">
+                            {{#if colaboracion.colaborador.esJuridico}}
+                                <strong>Colaborador:</strong> <span style="font-weight: normal;"> {{colaboracion.colaborador.razonSocial}}</span><br>
+                            {{else}}
+                                <strong>Colaborador:</strong> <span style="font-weight: normal;"> {{colaboracion.colaborador.nombreYapellido}}</span><br>
+                            {{/if}}
+                                <span><strong>Heladera Origen:</strong> {{colaboracion.heladeraOrigen.nombreSignificativo}}</span><br>
+                                <span><strong>Heladera Destino:</strong> {{colaboracion.heladeraDestino.nombreSignificativo}}</span><br>
+                                <span><strong>Cantidad Viandas:</strong> {{colaboracion.cantidadViandas}}</span><br>
+                                <span><strong>Motivo:</strong> {{colaboracion.motivo}}</span><br>
+                            </span>
+                        </div>
+                    </div>
+                {{/if}}
+                {{#if (isType colaboracion "RegistroDePersonaVulnerable")}}
+                    <div class="detalle-colaboracion d-flex justify-content-between">
+                        <div>
+                            <span class="tipo-colaboracion fw-bold">Registro de Persona Vulnerable</span><br>
+                            <span class="smaller-text">
+                                {{#if colaboracion.colaborador.esJuridico}}
+                                    <strong>Colaborador:</strong> <span style="font-weight: normal;"> {{colaboracion.colaborador.razonSocial}}</span><br>
+                                {{else}}
+                                    <strong>Colaborador:</strong> <span style="font-weight: normal;"> {{colaboracion.colaborador.nombreYapellido}}</span><br>
+                                {{/if}}
+                                <span><strong>Fecha de Registro:</strong> {{colaboracion.fechaColaboracionFormateada}}</span><br>
+                                <span><strong>Descripcion:</strong> {{colaboracion.personaVulnerable.descripcion}}</span><br>
+                            </span>
+                        </div>
+                        <div class="persona-vulnerable">
+                            <strong>Persona Vulnerable:</strong><br>
+                            <span class="smaller-text">
+                                <span>Nombre: {{colaboracion.personaVulnerable.nombre}}</span><br>
+                                <span>Numero Tarjeta: {{colaboracion.personaVulnerable.tarjetaPersonaVulnerable.codigoAlfaNumerico}}</span>
+                            </span>
+                        </div>
+                    </div>
+                {{/if}}
+                {{#if (isType colaboracion "HacerseCargoHeladera")}}
+                    <div class="detalle-colaboracion d-flex justify-content-between">
+                        <div>
+                            <span class="tipo-colaboracion fw-bold">Hacerse Cargo de Heladera</span><br>
+                            <span class="smaller-text">
+                            {{#if colaboracion.colaborador.esJuridico}}
+                                <strong>Colaborador:</strong> <span style="font-weight: normal;"> {{colaboracion.colaborador.razonSocial}}</span><br>
+                            {{else}}
+                                <strong>Colaborador:</strong> <span style="font-weight: normal;"> {{colaboracion.colaborador.nombreYapellido}}</span><br>
+                            {{/if}}
+                                <span><strong>Fecha de Colaboracion:</strong> {{colaboracion.fechaColaboracionFormateada}}</span><br>
+                                <span><strong>Heladera:</strong> {{colaboracion.heladera.nombreSignificativo}}</span><br>
+                            </span>
+                        </div>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+</div>

@@ -1,0 +1,39 @@
+    <div class="container">
+        <h1 style="color: black;">Colaboradores</h1>
+
+        <form action="/site/admin/colaboradores" method="GET">
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar Colaborador" name="nombre" id="nombre">
+                <button type="submit">🔍</button>
+            </div>
+        </form>
+
+        <div class="seccion">
+            <div class="sub-seccion">
+                {{#if colaboradores.length}}
+                    <ul class="list-group">
+                        {{#colaboradores}}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>
+                                    {{#if (eq tipo "Humano")}}
+                                        {{nombreYapellido}}
+                                    {{else}}
+                                        {{razonSocial}}
+                                    {{/if}}
+                                </span>
+                                <div class="button-container">
+                                    <button onclick="window.location.href='/site/admin/colaboradores/{{id}}'">Mostrar Detalles</button>
+                                </div>
+                            </li>
+                        {{/colaboradores}}
+                    </ul>
+                {{else}}
+                    <p>{{message}}</p>
+                {{/if}}
+            </div>
+        </div>
+
+        {{> paginacion}}
+      
+        
+    </div>
