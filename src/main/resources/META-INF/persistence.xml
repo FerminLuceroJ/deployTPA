@@ -62,7 +62,7 @@
         
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://fermin:PurU3dDdhbbbrcVXa2lqLCx0pc6CT4ZG@dpg-cu0r4pjqf0us73d2l30g-a.oregon-postgres.render.com:5432/dbfermin"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://dpg-cu0r4pjqf0us73d2l30g-a.oregon-postgres.render.com:5432/dbfermin"/>
             <property name="javax.persistence.jdbc.user" value="fermin"/>
             <property name="javax.persistence.jdbc.password" value="PurU3dDdhbbbrcVXa2lqLCx0pc6CT4ZG"/>
 
