@@ -61,12 +61,14 @@
         <!-- ACA VAN LAS CLASES A PERSISTIR -->
         
         <properties>
-            <property name="hibernate.connection.url" value="${DATABASE_URL}" />
-            <property name="hibernate.connection.username" value="${DATABASE_USER}" />
-            <property name="hibernate.connection.password" value="${DATABASE_PASSWORD}" />
+            <property name="javax.persistence.jdbc.url" value="${DATABASE_URL}" />
+            <property name="javax.persistence.jdbc.user" value="${DATABASE_USER}" />
+            <property name="javax.persistence.jdbc.password" value="${DATABASE_PASSWORD}" />
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL10Dialect" />
-            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
             <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
         </properties>
 
     </persistence-unit>
