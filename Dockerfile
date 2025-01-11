@@ -11,6 +11,6 @@ RUN mvn clean package assembly:single -DskipTests
 #
 FROM openjdk:17-jdk-slim
 COPY --from=build /target/tpadds2024-1.0.0-jar-with-dependencies.jar app.jar
-# ENV PORT=8080
+# ENV PORT=9001
 EXPOSE 9001
 CMD ["java","-classpath","app.jar","server.App"]
