@@ -14,7 +14,7 @@ public class CronTaskReporte {
 
     // Esto despues lo tengo que modificar para setear la frecuencia del reporte (milisegundos).
     long delay = 0;
-    long period = 2 * 60 * 60 * 1000;
+    long period = 12 * 60 * 60 * 1000;
 
     timer.schedule(reportTask, delay, period);
   }
