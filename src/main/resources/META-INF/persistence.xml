@@ -62,9 +62,9 @@
         
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="${env.DATABASE_URL}"/>
-            <property name="javax.persistence.jdbc.user" value="${env.DATABASE_USER}"/>
-            <property name="javax.persistence.jdbc.password" value="${env.DATABASE_PASSWORD}"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://fermin:PurU3dDdhbbbrcVXa2lqLCx0pc6CT4ZG@dpg-cu0r4pjqf0us73d2l30g-a.oregon-postgres.render.com:5432/dbfermin"/>
+            <property name="javax.persistence.jdbc.user" value="fermin"/>
+            <property name="javax.persistence.jdbc.password" value="PurU3dDdhbbbrcVXa2lqLCx0pc6CT4ZG"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL10Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
