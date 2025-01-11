@@ -31,11 +31,11 @@ public class GeneradorReportes {
 
     List<Colaboracion> colaboraciones = RepositorioColaboraciones.getInstance().buscarPorIdColaborador(colaborador.getId());
 
-    puntaje = colaboraciones.stream().map(Colaboracion::calcularPuntaje).reduce(Double::sum).get();
-
-    /*for (Colaboracion colaboracion : RepositorioColaboraciones.getInstance().buscarPorIdColaborador(colaborador.getId())) {
-      puntaje += colaboracion.calcularPuntaje();
-    }*/
+    // Utiliza orElse para manejar el caso cuando el Optional esté vacío
+    puntaje = colaboraciones.stream()
+        .map(Colaboracion::calcularPuntaje)
+        .reduce(Double::sum)
+        .orElse(0.00);  // Si no hay elementos, se asigna 0.00 como puntaje
 
     return puntaje;
   }
