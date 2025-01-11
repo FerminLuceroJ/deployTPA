@@ -372,7 +372,6 @@ public class Bootstrap implements WithSimplePersistenceUnit {
       personaVulnerable.setFechaNacimiento(fechaNacimiento);
       personaVulnerable.setSituacionDeCalle(situacionDeCalle);
       personaVulnerable.setNumeroDocumento(numeroDocumento);
-      personaVulnerable.setTarjetaPersonaVulnerable(null);
       personaVulnerable.setCantidadMenoresACargo(cantidadMenoresACargo);
       personaVulnerable.setColaboradorAsignado(colaboradorAsignado);
       personaVulnerable.setTarjetaPersonaVulnerable(tarjetaPersonaVulnerable);
