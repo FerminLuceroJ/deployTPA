@@ -26,8 +26,6 @@
 
         <class>dominio.entidades.vianda.Vianda</class>
 
-        <class>dominio.entidades.heladera.incidentes.Incidente</class>
-
         <class>dominio.entidades.heladera.aperturas.SolicitudApertura</class>
         <class>dominio.entidades.tarjeta.solicitudes.SolicitudTarjeta</class>
 
@@ -57,7 +55,6 @@
         <class>dominio.entidades.heladera.incidentes.AlertaConexion</class>
         <class>dominio.entidades.heladera.incidentes.FallaTecnica</class>
         <class>dominio.entidades.heladera.incidentes.AlertaTemperatura</class>
-        <class>dominio.entidades.heladera.incidentes.suscripciones.Suscripcion</class>
         <class>dominio.entidades.heladera.incidentes.suscripciones.Suscripcion</class>
 
 
